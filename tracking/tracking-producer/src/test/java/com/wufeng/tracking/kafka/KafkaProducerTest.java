@@ -52,13 +52,13 @@ public class KafkaProducerTest {
         messageInfo.setLogEvent(1);
         log.info("brokerList={}", "brokerList");
         for (int i = 0; i < 2; i++) {
-            List<String> list = KafkaProducersFactory.msgList.get("tracking-detail-1");
+            List<String> list = KafkaProducersFactory.msgList.get("tracking-detail-0");
             if (CollectionUtils.isEmpty(list)) {
                 list = new ArrayList<String>();
             }
             list.add(messageInfo.toString());
-            KafkaProducersFactory.msgList.put("tracking-detail-1", list);
+            KafkaProducersFactory.msgList.put("tracking-detail-0", list);
         }
-        trackingDetailCollectService.doBatchCollect(messageInfo, "tracking-detail-1");
+        trackingDetailCollectService.doBatchCollect(messageInfo, "tracking-detail-0");
     }
 }

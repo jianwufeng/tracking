@@ -31,7 +31,7 @@ public class TrackingMessageConsumerFactory {
 
     private final ConsumerConnector consumer;
     private final String topic;
-    private final String group;
+    // private final String group;
 
     List<TrackingDetailProcessService> trackingDetailProcessServices;
 
@@ -50,7 +50,7 @@ public class TrackingMessageConsumerFactory {
             this.topic = TrackingKafkaConstant.TOPIC_PREFIX + topicIndex;
         }
 
-        this.group = groupName;
+        // this.group = groupName;
     }
 
     private static ConsumerConfig createConsumerConfig(String zookeeperConnect, String groupName) {
